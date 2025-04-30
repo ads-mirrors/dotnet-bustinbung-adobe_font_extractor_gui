@@ -1,30 +1,26 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <StartupObject>adobe_font_extractor_gui.App</StartupObject>
     <ApplicationIcon>adobextr.ico</ApplicationIcon>
     <SignAssembly>False</SignAssembly>
     <Authors>bustinbung</Authors>
     <PackageIcon>adobextr.png</PackageIcon>
+	<Version>2.0.0</Version>
   </PropertyGroup>
-
   <ItemGroup>
     <Content Include="adobextr.ico" />
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.2.0" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.7.25104.5739" />
     <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.0" />
   </ItemGroup>
-
   <ItemGroup>
     <Page Update="MainWindow - Copy.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-
 </Project>

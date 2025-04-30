@@ -29,7 +29,7 @@ namespace adobe_font_extractor_gui
     {
         public static class G
         {
-            public static string versionNumber = "v1.0.0";
+            public static string versionNumber = "v2.0.0";
             public static string ccFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Adobe";
             public static string outputFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Adobe\Fonts";
             public static bool verboseLogging = false;

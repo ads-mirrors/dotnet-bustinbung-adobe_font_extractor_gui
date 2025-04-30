@@ -8,6 +8,7 @@
     <SignAssembly>False</SignAssembly>
     <Authors>bustinbung</Authors>
     <PackageIcon>adobextr.png</PackageIcon>
+	<Version>2.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="adobextr.ico" />

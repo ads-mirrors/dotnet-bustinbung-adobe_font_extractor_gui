@@ -179,7 +179,7 @@ namespace adobe_font_extractor_gui
             {
                 Dispatcher.Invoke(() =>
                 {
-                    MessageBox.Show("Font folder not found. " + dirEx, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    System.Windows.MessageBox.Show("Font folder not found. " + dirEx, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     logBox.UpdateLog("Font folder not found.", Brushes.Red);
                 });
                 return 0;
@@ -273,7 +273,7 @@ namespace adobe_font_extractor_gui
             if (!Directory.Exists(G.outputFolderPath))
             {
                 
-                MessageBoxResult result = MessageBox.Show("Output folder not found. Create folder?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Error);
+                MessageBoxResult result = System.Windows.MessageBox.Show("Output folder not found. Create folder?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Error);
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
@@ -282,7 +282,7 @@ namespace adobe_font_extractor_gui
                         folderExists = 0;
                         break;
                     case MessageBoxResult.No:
-                        MessageBox.Show("Please select a valid output folder.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        System.Windows.MessageBox.Show("Please select a valid output folder.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                         logBox.UpdateLog("Output folder not found.", Brushes.Red);
                         folderExists = 1;
                         break;
@@ -315,7 +315,7 @@ namespace adobe_font_extractor_gui
             {
                 Dispatcher.Invoke(() =>
                 {
-                    MessageBox.Show("Please select some fonts first.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    System.Windows.MessageBox.Show("Please select some fonts first.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     logBox.UpdateLog("Please select some fonts first.", Brushes.Red);
                 });
                 return 1;

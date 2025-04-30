@@ -29,7 +29,7 @@ namespace adobe_font_extractor_gui
     {
         public static class G
         {
-            public static string versionNumber = "v1.0.0";
+            public static string versionNumber = "v2.0.0";
             public static string ccFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Adobe";
             public static string outputFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Adobe\Fonts";
             public static bool verboseLogging = false;
@@ -179,7 +179,7 @@ namespace adobe_font_extractor_gui
             {
                 Dispatcher.Invoke(() =>
                 {
-                    MessageBox.Show("Font folder not found. " + dirEx, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    System.Windows.MessageBox.Show("Font folder not found. " + dirEx, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     logBox.UpdateLog("Font folder not found.", Brushes.Red);
                 });
                 return 0;
@@ -262,7 +262,7 @@ namespace adobe_font_extractor_gui
                 logBox.UpdateLog("Copy completed.", Brushes.Green);
                 if (G.openFolderOnFinish)
                 {
-                    Process.Start(G.outputFolderPath);
+                    Process.Start("explorer.exe", G.outputFolderPath);
                 }
             }
         }
@@ -273,7 +273,7 @@ namespace adobe_font_extractor_gui
             if (!Directory.Exists(G.outputFolderPath))
             {
                 
-                MessageBoxResult result = MessageBox.Show("Output folder not found. Create folder?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Error);
+                MessageBoxResult result = System.Windows.MessageBox.Show("Output folder not found. Create folder?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Error);
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
@@ -282,7 +282,7 @@ namespace adobe_font_extractor_gui
                         folderExists = 0;
                         break;
                     case MessageBoxResult.No:
-                        MessageBox.Show("Please select a valid output folder.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        System.Windows.MessageBox.Show("Please select a valid output folder.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                         logBox.UpdateLog("Output folder not found.", Brushes.Red);
                         folderExists = 1;
                         break;
@@ -315,7 +315,7 @@ namespace adobe_font_extractor_gui
             {
                 Dispatcher.Invoke(() =>
                 {
-                    MessageBox.Show("Please select some fonts first.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    System.Windows.MessageBox.Show("Please select some fonts first.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     logBox.UpdateLog("Please select some fonts first.", Brushes.Red);
                 });
                 return 1;

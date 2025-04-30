@@ -262,7 +262,7 @@ namespace adobe_font_extractor_gui
                 logBox.UpdateLog("Copy completed.", Brushes.Green);
                 if (G.openFolderOnFinish)
                 {
-                    Process.Start(G.outputFolderPath);
+                    Process.Start("explorer.exe", G.outputFolderPath);
                 }
             }
         }
